@@ -1,8 +1,8 @@
 #include <Arduino.h>
 
 int analogPin = A0;
-float read_voltage = 0.0;
-float ref_voltage = 3.3;
+float read_curr_ma = 0.0;
+float max_curr_ma = 20.0;
 float adc_intervals = 1023.0;
 
 
@@ -13,6 +13,6 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  read_voltage = analogRead(analogPin) * (ref_voltage / adc_intervals); 
-  Serial.println(read_voltage);        
+  read_curr_ma = analogRead(analogPin) * (max_curr_ma / adc_intervals); 
+  Serial.println(read_curr_ma);        
 }
